@@ -1,25 +1,2 @@
 zxcvbn-python
-Usage: streamlit [OPTIONS] COMMAND [ARGS]...
-
-  Try out a demo with:
-
-      $ streamlit hello
-
-  Or use the line below to run your own script:
-
-      $ streamlit run your_script.py
-
-Options:
-  --log_level [error|warning|info|debug]
-  --version                       Show the version and exit.
-  --help                          Show this message and exit.
-
-Commands:
-  activate  Activate Streamlit by entering your email.
-  cache     Manage the Streamlit cache.
-  config    Manage Streamlit's config settings.
-  docs      Show help in browser.
-  hello     Runs the Hello World script.
-  help      Print this help message.
-  run       Run a Python script, piping stderr to Streamlit.
-  version   Print Streamlit's version number.
+streamlit
