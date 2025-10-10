@@ -23,7 +23,7 @@ while True:
                 eval['crack_times_seconds'],
                 eval['password'],
                 eval['sequence'],
-                eval['entropy'],
+                eval['feedback'],
                 eval['match_sequence'],
                 cout]
     print(f"the password has been found {cout} times in data breaches.") if cout>0 else "Good news: the password isnt found in data breaches."
