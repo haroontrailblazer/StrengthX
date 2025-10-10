@@ -1,13 +1,5 @@
 import zxcvbn as zac
 
-# Password strength evaluation function
-
-def eval_pass_strength(password):
-    result = zac.zxcvbn(password)
-    score = result['score']
-    feedback = result['feedback']
-    return score, feedback
-
 # Example usage
 
 while True:
@@ -17,10 +9,12 @@ while True:
     
     # Calling the evaluation function
     
-    eval,fb = eval_pass_strength(pwd)
+    eval= zac.zxcvbn(pwd)
     
     # Displaying the results (result is between 0 and 4) Arguments: eval, feedback[warning, suggestions]
-    
-    print(f"Password Strength Score (0-4): {eval}")
-    print(f"Feedback: {fb['warning']}")
-    print(f"Suggestions: {fb['suggestions'] if fb['suggestions'] else 'None'}\n")
+    feedback = eval['feedback']
+    print(f"Password strength score (0-4): {eval['score']}")
+    print(f"Feedback: {feedback['warning']}")
+    print(f' Suggestions: {feedback["suggestions"] if feedback["suggestions"] else "None"}')
+    print(f"Estimated guesses: {eval['guesses']}")
+    print(f"Estimated crack time (seconds): {eval['crack_times_seconds']}")
