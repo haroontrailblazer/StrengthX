@@ -6,6 +6,7 @@ from pwnedpasswords import pwnedpasswords as pwned
 
 while True:
     pwd = input("Enter a password to evaluate (or 'exit' to quit): ")
+    # Hashing the password using SHA-1 for pwnedpasswords check
     pwdh = hashlib.sha1(pwd.encode("utf-8")).hexdigest().upper()
     if pwd.lower()=='exit':
         break
@@ -14,7 +15,7 @@ while True:
     eval= zac.zxcvbn(pwd)
     cout= pwned.check(pwd)
     
-    # Displaying the results (result is between 0 and 4) Arguments: eval, feedback[warning, suggestions]
+    # collecting all the measures Available
     Measures = [eval['guesses'],
                 eval['guesses_log10'],
                 eval['score'],
