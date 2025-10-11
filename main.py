@@ -12,8 +12,8 @@ while True:
         break
     
     # Calling the evaluation function
-    eval= zac.zxcvbn(pwd)
-    cout= pwned.check(pwd)
+    eval= zac.zxcvbn(pwdh)
+    cout= pwned.check(pwdh)
     
     # collecting all the measures Available
     Measures = [eval['guesses'],
