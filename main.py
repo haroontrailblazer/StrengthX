@@ -1,14 +1,14 @@
 import zxcvbn as zac
 import hashlib
+import pwinput as pn
 from pwnedpasswords import pwnedpasswords as pwned
 
 # Example usage
 
 while True:
-    pwd = input("Enter a password to evaluate (or 'exit' to quit): ")
     # Hashing the password using SHA-1 for pwnedpasswords check
-    pwdh = hashlib.sha1(pwd.encode("utf-8")).hexdigest().upper()
-    if pwd.lower()=='exit':
+    pwdh = hashlib.sha1(pn.pwinput("Enter a password to evaluate (or 'exit' to quit): ",mask='*').encode("utf-8")).hexdigest().upper()
+    if pwdh =='DE3AC21778E51DE199438300E1A9F816C618D33A':
         break
     
     # Calling the evaluation function
@@ -26,4 +26,4 @@ while True:
                 eval['sequence'],
                 eval['feedback'],
                 cout]
-    print(f"the password has been found {cout} times in data breaches.") if cout>0 else "Good news: the password isnt found in data breaches."
+    print(f"the password has been found {cout} times in data breaches.") if cout>0 else "Good news: the password isnt found in data breaches.\n"
