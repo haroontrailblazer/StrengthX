@@ -19,7 +19,6 @@ while True:
     # Regex pattern to ensure at least 8 characters, one uppercase letter, one digit, and one special character
     if not re.match(pattern, pwd):
         print("Password must be at least 8 characters long, contain at least one uppercase letter, one digit, and one special character.")
-        continue
     
     # Hashing the password using SHA-1 for pwnedpasswords check
     pwdh = hashlib.sha1(pwd.encode("utf-8")).hexdigest().upper()
@@ -40,4 +39,4 @@ while True:
                 eval['feedback'],
                 cout]
     
-    print(f"Password has been found {cout} times in data breaches. Please choose a different password.")if cout > 0 else print("Password is strong and has not been found in data breaches.")
+    print(f"Password has been found {Measures[-1]} times in data breaches. Please choose a different password.")if Measures[-1] > 0 else print("Password is strong and has not been found in data breaches.")
