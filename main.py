@@ -5,7 +5,14 @@ from pwnedpasswords import pwnedpasswords as pwned
 
 # --- Page Configuration ---
 st.set_page_config(page_title="StrengthX - Strengthen Your Password",page_icon="🔒",layout="centered")
-st.markdown("<style>.css-d1b1ld.edgvbvh6 {visibility: hidden;}</style>", unsafe_allow_html=True)
+st.markdown("""
+    <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+    </style>
+""", unsafe_allow_html=True)
+
+
 
 # --- Custom CSS Styling ---
 st.markdown("""
@@ -46,9 +53,13 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+
+
 st.markdown("<div class='title'>StrengthX</div>", unsafe_allow_html=True)
 st.markdown("<div class='subtitle'>Strengthen your password</div>", unsafe_allow_html=True)
 st.markdown("<br> </br>", unsafe_allow_html=True)
+
+
 
 # Example usage
 # Prompting user for password input
@@ -57,12 +68,18 @@ if not pwd:
     st.info("Please enter a password to evaluate its strength.")
     st.stop()
     
+    
+    
 # Hashing the password using SHA-1 for pwnedpasswords check
 pwdh = hashlib.sha1(pwd.encode("utf-8")).hexdigest().upper()
+
+
     
 # Calling the evaluation function
 eval= zac.zxcvbn(pwd)
 cout= pwned.check(pwdh)
+
+
     
 # collecting all the measures Available
 Measures = [eval['guesses'],
@@ -77,11 +94,14 @@ Measures = [eval['guesses'],
             cout]
 
 
+
+
 # --- Display Breach Results ---
 if Measures[9]>0:
     st.error(f"⚠️ This password has appeared **{Measures[9]:,} times** in data breaches! Choose a more unique password.")
 else:
     st.success( "✅ Great! This password was not found in any known data breaches.")
+
 
     
 # --- Password Strength Score Interpretation ---
@@ -95,6 +115,8 @@ elif eval['score']==3:
     st.success(f"the password is strong")
 else:
     st.success(f"the password is very strong")
+    
+
 
 st.markdown("<br> </br>", unsafe_allow_html=True)
 st.divider()
@@ -105,11 +127,6 @@ st.write(f"***Crack Time :***    {eval['crack_times_display']['offline_fast_hash
 st.write(f"***Feedback :***    {Measures[8]['warning'] if Measures[8]['warning'] else 'No warnings'}")
 st.write(f"***Suggestion :***    {Measures[8]['suggestions'] if Measures[8]['suggestions'] else 'No suggestions'}")
 st.markdown("<br> </br>", unsafe_allow_html=True)
-
-# Validating password complexity
-pattern = r'^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$'
-    
-# Regex pattern to ensure at least 8 characters, one uppercase letter, one digit, and one special character
 
     
 # --- Info Section ---
@@ -123,11 +140,25 @@ Avoid simplicity – it increases the risk of unauthorized access.
 Your passwords are never stored, never shared, and never transmitted in plain text.
 All evaluations happen securely on your own device.
 """)
+
 st.divider()
+
 # --- Footer ---
 st.markdown("""
-<div class="footer">
-    Gmail: <a href="hexra2025@gmail.com">hexra2025@gmail.com</a><br> 
-    <a href="https://www.instagram.com/hexra_?igsh=dGFqY2MzMjQ1aGJo">Instagram</a> | <a href="https://github.com/haroontrailblazer">GitHub</a>
+<div class="footer" style="background-color:black;color:#333;padding:18px;border-radius:12px;max-width:820px;margin:20px auto;text-align:center;font-family:Segoe UI, Tahoma, sans-serif;">
+    <p style="margin:0 0 8px;font-size:14px;">
+        <strong>Contact:</strong>
+        <a href="mailto:hexra2025@gmail.com" style="color:#1a73e8;text-decoration:none;margin-left:8px;">hexra2025@gmail.com</a>
+    </p>
+    <p style="margin:0 0 12px;font-size:14px;">
+        <a href="https://www.instagram.com/hexra_?igsh=dGFqY2MzMjQ1aGJo" target="_blank" style="color:#1a73e8;text-decoration:none;margin:0 8px;">Instagram</a> |
+        <a href="https://github.com/haroontrailblazer" target="_blank" style="color:#1a73e8;text-decoration:none;margin:0 8px;">GitHub</a>
+    </p>
+    <hr style="border:none;border-top:1px solid #e6e6e6;margin:12px 0;">
+    <p style="margin:8px 0 0;color:#555;font-size:13px;line-height:1.4;text-align:left;">
+        <strong>About:</strong><br>
+        StrengthX is a free, open-source password strength checker designed to help you create stronger passwords and enhance your online security.
+    </p>
 </div>
+<br>
 """, unsafe_allow_html=True)
