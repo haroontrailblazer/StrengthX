@@ -24,7 +24,7 @@ If you discover a **vulnerability**, **security issue**, or **data privacy risk*
    Instead, please report it **privately** to the maintainers.
 
 2. Contact via:
-   - 📧 **Email:** [haroontrailblazer@gmail.com](mailto:haroontrailblazer@gmail.com)
+   - 📧 **Email:** [hexra2025@gmail.com](mailto:hexra2025@gmail.com)
    - Or open a **confidential GitHub Security Advisory** (if available).
 
 3. Include in your report:
