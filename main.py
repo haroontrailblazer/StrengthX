@@ -12,6 +12,16 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+# --- SEO META TAGS ---
+st.markdown("""
+<head>
+  <title>StrengthX - Strengthen Your Password</title>
+  <meta name="description" content="Check your password strength and improve your security with StrengthX — a simple, secure, and smart tool.">
+  <meta name="keywords" content="password, security, password checker, password strength, StrengthX, Haroon K M">
+  <meta name="robots" content="index, follow">
+</head>
+""", unsafe_allow_html=True)
+
 
 
 # --- Custom CSS Styling ---
