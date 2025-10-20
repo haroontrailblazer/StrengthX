@@ -1,6 +1,3 @@
-# Allow all search engines to crawl the site
 User-agent: *
 Allow: /
-
-# Sitemap location (optional but recommended)
 Sitemap: https://strengthx.onrender.com/sitemap.xml
