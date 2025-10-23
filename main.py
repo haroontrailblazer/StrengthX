@@ -1,5 +1,6 @@
 import zxcvbn as zac
 import hashlib
+import re
 import streamlit as st
 from pwnedpasswords import pwnedpasswords as pwned
 
@@ -88,10 +89,9 @@ pwdh = hashlib.sha1(pwd.encode("utf-8")).hexdigest().upper()
 # Calling the evaluation function
 eval= zac.zxcvbn(pwd)
 cout= pwned.check(pwdh)
-
-
     
 # collecting all the measures Available
+regexeval=[]
 Measures = [eval['guesses'],
             eval['guesses_log10'],
             eval['score'],
@@ -101,10 +101,7 @@ Measures = [eval['guesses'],
             eval['password'],
             eval['sequence'],
             eval['feedback'],
-            cout]
-
-
-
+            cout,]
 
 # --- Display Breach Results ---
 if Measures[9]>0:
@@ -136,6 +133,40 @@ st.markdown('<span style="color:#33ff99; font-size:1.5em;">Password Strength Ins
 st.write(f"***Crack Time :***    {eval['crack_times_display']['offline_fast_hashing_1e10_per_second']}")
 st.write(f"***Feedback :***    {Measures[8]['warning'] if Measures[8]['warning'] else 'No warnings'}")
 st.write(f"***Suggestion :***    {Measures[8]['suggestions'] if Measures[8]['suggestions'] else 'No suggestions'}")
+
+# --- Regex Evaluations ---
+
+# checking for numbers
+pattern1 = r'(?=.*\d)'
+if not re.search(pattern1, pwd):
+    regexeval.append('Add Numbers to your password')
+
+# checking for length
+if len(pwd) < 12:
+    regexeval.append('Increase Length of your Password to at least 12 characters.')
+
+# checking for uppercase letters
+pattern2 = r'(?=.*[A-Z])'
+if not re.search(pattern2, pwd):
+    regexeval.append('Add Uppercase letters to your password')
+
+# checking for special characters
+pattern3 = r'[!@#$%^&*()_+{}\[\]:;"\'<>?,./`~\\|\-]'
+if not re.search(pattern3, pwd):
+    regexeval.append('Add Special Characters to your password')
+    
+# Displaying regex evaluation results
+if len(regexeval)==1:
+    st.write(f"***Password issue :***  {regexeval[0]}")
+elif len(regexeval)==2:
+    st.write(f"***Password issue :***  {regexeval[0],regexeval[1]}")
+elif len(regexeval)==3:
+    st.write(f"***Password issue :***  {regexeval[0],regexeval[1],regexeval[2]}")
+elif len(regexeval)==4:
+    st.write(f"***Password issue :***  {regexeval[0],regexeval[1],regexeval[2],regexeval[3]}")
+else:
+    "✅ No issues found. Your password looks good!"
+    
 st.markdown("<br> </br>", unsafe_allow_html=True)
 
     
