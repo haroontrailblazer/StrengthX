@@ -132,7 +132,14 @@ st.divider()
 st.markdown('<span style="color:#33ff99; font-size:1.5em;">Password Strength Insights :</span>', unsafe_allow_html=True)
 st.write(f"***Crack Time :***    {eval['crack_times_display']['offline_fast_hashing_1e10_per_second']}")
 st.write(f"***Feedback :***    {Measures[8]['warning'] if Measures[8]['warning'] else 'No warnings'}")
-st.write(f"***Suggestion :***    {Measures[8]['suggestions'] if Measures[8]['suggestions'] else 'No suggestions'}")
+# Format suggestions (handles list or single string)
+suggestions = Measures[8].get('suggestions', []) if isinstance(Measures[8], dict) else Measures[8]
+if isinstance(suggestions, list):
+    suggestion_text = ", ".join(suggestions) if suggestions else "No suggestions"
+else:
+    suggestion_text = str(suggestions) if suggestions else "No suggestions"
+
+st.write(f"***Suggestion :***    {suggestion_text}")
 
 # --- Regex Evaluations ---
 
@@ -156,16 +163,12 @@ if not re.search(pattern3, pwd):
     regexeval.append('Add Special Characters to your password')
     
 # Displaying regex evaluation results
-if len(regexeval)==1:
-    st.write(f"***Password issue :***  {regexeval[0]}")
-elif len(regexeval)==2:
-    st.write(f"***Password issue :***  {regexeval[0],regexeval[1]}")
-elif len(regexeval)==3:
-    st.write(f"***Password issue :***  {regexeval[0],regexeval[1],regexeval[2]}")
-elif len(regexeval)==4:
-    st.write(f"***Password issue :***  {regexeval[0],regexeval[1],regexeval[2],regexeval[3]}")
-else:
-    "✅ No issues found. Your password looks good!"
+while True:
+    if regexeval:
+        st.markdown("**Additional Recommendations:**")
+        for recommendation in regexeval:
+            st.write(f"- {recommendation}")
+    break
     
 st.markdown("<br> </br>", unsafe_allow_html=True)
 
