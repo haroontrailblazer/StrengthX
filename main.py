@@ -165,7 +165,7 @@ if not re.search(pattern3, pwd):
 # Displaying regex evaluation results
 while True:
     if regexeval:
-        st.markdown("<span style='color:#5595d4'>***Additional Recommendations:***</span>", unsafe_allow_html = True)
+        st.markdown("<span style= 'color:#5595d4'>***Additional Recommendations:***</span>", unsafe_allow_html = True)
         for recommendation in regexeval:
             st.write(f"- {recommendation}")
     break
@@ -174,8 +174,9 @@ st.markdown("<br> </br>", unsafe_allow_html=True)
 
     
 # --- Info Section ---
+st.markdown("### <span style='color:#FF0000'>⚠️ Attention!!</span> ###", unsafe_allow_html = True)
+
 st.markdown("""
-### ⚠️ Attention!!
 **Using weak passwords:**  
 Weak passwords like `123456` or `qwerty` are easy to guess and vulnerable to brute-force attacks.  
 Avoid simplicity – it increases the risk of unauthorized access.
@@ -183,7 +184,7 @@ Avoid simplicity – it increases the risk of unauthorized access.
 **Notice:**
 Your passwords are never stored, never shared, and never transmitted in plain text.
 All evaluations happen securely on your own device.
-""")
+""",unsafe_allow_html = True)
 
 st.divider()
 
