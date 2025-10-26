@@ -113,15 +113,15 @@ else:
     
 # --- Password Strength Score Interpretation ---
 if eval['score']==0:
-    st.error(f"the password is very weak")
+    st.error(f"The password is very weak")
 elif eval['score']==1:
-    st.warning(f"the password is weak")
+    st.warning(f"The password is weak")
 elif eval['score']==2:
-    st.info(f"the password is fair")
+    st.info(f"The password is fair")
 elif eval['score']==3:
-    st.success(f"the password is strong")
+    st.success(f"The password is strong")
 else:
-    st.success(f"the password is very strong")
+    st.success(f"The password is very strong")
     
 
 
