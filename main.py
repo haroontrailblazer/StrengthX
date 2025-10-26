@@ -76,7 +76,7 @@ st.markdown("<br> </br>", unsafe_allow_html=True)
 # Prompting user for password input
 pwd = st.text_input("🔍Know how secure is your password: ", type="password", placeholder="Enter Your Password")
 if not pwd:
-    st.info("Your passwords are never stored or transmitted in plain text. All evaluations are handled securely at every stage. 🔐")
+    st.info("Your passwords are never stored or transmitted in plain text. All evaluations are handled securely at every stage.")
     st.stop()
     
     
