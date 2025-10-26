@@ -132,7 +132,7 @@ st.divider()
 st.markdown('<span style="color:#33ff99; font-size:1.5em;">Password Strength Insights :</span>', unsafe_allow_html=True)
 st.write(f"***Crack Time :***    {eval['crack_times_display']['offline_fast_hashing_1e10_per_second']}")
 st.write(f"***Feedback :***    {Measures[8]['warning'] if Measures[8]['warning'] else 'No warnings'}")
-# Format suggestions (handles list or single string)
+
 suggestions = Measures[8].get('suggestions', []) if isinstance(Measures[8], dict) else Measures[8]
 if isinstance(suggestions, list):
     suggestion_text = ", ".join(suggestions) if suggestions else "No suggestions"
@@ -165,7 +165,7 @@ if not re.search(pattern3, pwd):
 # Displaying regex evaluation results
 while True:
     if regexeval:
-        st.markdown("**Additional Recommendations:**")
+        st.markdown("***Additional Recommendations:***")
         for recommendation in regexeval:
             st.write(f"- {recommendation}")
     break
