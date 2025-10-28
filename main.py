@@ -126,11 +126,10 @@ else:
 
 
 st.markdown("<br> </br>", unsafe_allow_html=True)
-st.markdown("<br> </br>", unsafe_allow_html=True)
 st.divider()
    
 # --- Insights ---
-st.markdown("## <span style='color:#33ff99; font-size:1.5em;'>Detailed Analysis </span>", unsafe_allow_html=True)
+st.markdown('<span style="color:#33ff99; font-size:1.5em;">Detailed Analysis </span>', unsafe_allow_html=True)
 st.write(f"<span style='color:#5595d4'>***Crack Time :***</span>    {eval['crack_times_display']['offline_fast_hashing_1e10_per_second']}",unsafe_allow_html = True)
 st.write(f"<span style='color:#5595d4'>***Feedback :***</span>    {Measures[8]['warning'] if Measures[8]['warning'] else 'No warnings'}",unsafe_allow_html = True)
 
