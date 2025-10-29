@@ -1,11 +1,13 @@
 import zxcvbn as zac
 import hashlib
 import re
+import os
 import streamlit as st
 from pwnedpasswords import pwnedpasswords as pwned
 from ollama import chat
 import ollama
-ollama.api_base = "https://edgardo-stereographic-liane.ngrok-free.dev"
+OLLAMA_API = os.getenv("OLLAMA_API_URL", "https://edgardo-stereographic-liane.ngrok-free.dev")
+ollama.api_base = OLLAMA_API
 
 # --- Page Configuration ---
 st.set_page_config(page_title="StrengthX - Strengthen Your Password",page_icon="🔒",layout="centered")
