@@ -4,7 +4,7 @@ import re
 import streamlit as st
 from pwnedpasswords import pwnedpasswords as pwned
 from ollama import chat
-ollama.api_base = "https://ollama.com/haroontrailblazer/StrengthX-Dildo"
+ollama.api_base = "https://ollama.com"
 
 # --- Page Configuration ---
 st.set_page_config(page_title="StrengthX - Strengthen Your Password",page_icon="🔒",layout="centered")
