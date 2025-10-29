@@ -3,6 +3,7 @@ import hashlib
 import re
 import streamlit as st
 from pwnedpasswords import pwnedpasswords as pwned
+from ollama import chat
 
 # --- Page Configuration ---
 st.set_page_config(page_title="StrengthX - Strengthen Your Password",page_icon="🔒",layout="centered")
@@ -123,8 +124,8 @@ elif eval['score']==3:
 else:
     st.success(f"The password is very strong")
     
-
-
+    
+    
 st.markdown("<br> </br>", unsafe_allow_html=True)
 st.markdown("<br> </br>", unsafe_allow_html=True)
 st.divider()
@@ -170,7 +171,12 @@ while True:
         for recommendation in regexeval:
             st.write(f"- {recommendation}")
     break
-    
+
+
+# --- Dildo trigger as a tiny emoji icon ---
+st.markdown("<div class='small-emoji-btn'>", unsafe_allow_html=True)
+trigger = st.button(F"⚡summon Dildo", key="hidden_trigger")
+st.markdown("</div>", unsafe_allow_html=True)   
 st.markdown("<br> </br>", unsafe_allow_html=True)
 
     
@@ -208,3 +214,122 @@ st.markdown("""
 </div>
 <br>
 """, unsafe_allow_html=True)
+
+# --- Dildo Initialize state ---
+if "ai_text" not in st.session_state:
+    st.session_state.ai_text = "Hi i am Dildo<br>Summon me to generate a password!⚡"
+
+# --- Floating Icon + Hover Bubble ---
+st.markdown(f"""
+<style>
+/* Floating Icon Container */
+#float-icon {{
+    position: fixed;
+    bottom: 30px;
+    left: 10px;
+    z-index: 999;
+}}
+
+/* Image Icon */
+#ai-icon {{
+    width: 70px;
+    height: 70px;
+    background-image: url('https://raw.githubusercontent.com/haroontrailblazer/haroontrailblazer/main/1000146690-removebg-preview.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}}
+
+/* Hover glow */
+#ai-icon:hover {{
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px #00ffaa);
+}}
+
+/* Text bubble */
+#ai-text {{
+    position: absolute;
+    bottom: 10px;
+    left: 70px;
+    background: rgba(20, 20, 20, 0.95);
+    color: #00ffaa;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-size: 8px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.4s ease;
+    white-space: nowrap;
+    box-shadow: 0 0 10px #00ffaa;
+    font-family: 'Segoe UI', sans-serif;
+}}
+
+/* Show on hover */
+#float-icon:hover #ai-text {{
+    opacity: 1;
+    transform: translateX(0);
+}}
+
+/* Hide small emoji button visually */
+.small-emoji-btn button {{
+    background: transparent !important;
+    border: none !important;
+    color: transparent !important;
+    font-size: 0.5px !important;
+    height: 0px !important;
+    width: 0px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}}
+</style>
+
+<div id="float-icon" onclick="window.parent.postMessage({{type: 'generate_password'}}, '*')">
+    <div id="ai-icon"></div>
+    <div id="ai-text">{st.session_state.ai_text}</div>
+</div>
+""", unsafe_allow_html=True)
+
+
+# --- JavaScript listener (inside Streamlit iframe) ---
+st.markdown("""
+<script>
+window.addEventListener('message', (event) => {
+    if (event.data.type === 'generate_password') {
+        window.parent.postMessage({ type: 'trigger_streamlit' }, '*');
+    }
+});
+</script>
+""", unsafe_allow_html=True)
+
+
+# --- Inject script to auto-trigger Streamlit button when JS fires ---
+st.markdown("""
+<script>
+const iframe = window.frameElement;
+window.addEventListener('message', (event) => {
+    if (event.data.type === 'trigger_streamlit') {
+        const buttons = iframe.contentWindow.document.querySelectorAll('button');
+        for (const btn of buttons) {
+            if (btn.innerText.includes("⚡")) {
+                btn.click();
+                break;
+            }
+        }
+    }
+});
+</script>
+""", unsafe_allow_html=True)
+
+
+# AI complex password generator (haroontrailblazer/SrengthX-Dildo:V1)
+# AI refrence link: https://ollama.com/haroontrailblazer/StrengthX-Dildo
+# --- Generate password when triggered ---
+if trigger:
+    response = chat(model='haroontrailblazer/StrengthX-Dildo:V1', messages=[{
+        'role': 'user',
+        'content': 'Generate a strong password and display only the password, no explanations, no extra text, and nothing else under any circumstances, Dont regenerate any password everytime generate a unique one and always generate minimum length of 16.'
+    }])
+    st.session_state.ai_text = response.message.content
+    st.rerun()
