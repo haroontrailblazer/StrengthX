@@ -7,10 +7,11 @@ WORKDIR /main
 COPY . /main
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Start Ollama temporarily to allow pulling model
+RUN ollama serve & sleep 5 && ollama pull haroontrailblazer/StrengthX-Dildo:V1
+
 EXPOSE 8501
 EXPOSE 11434
 
 CMD ollama serve & \
-    sleep 10 && \
-    ollama pull haroontrailblazer/StrengthX-Dildo:V1 && \
     streamlit run main.py --server.port=8501 --server.address=0.0.0.0
