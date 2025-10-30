@@ -1,7 +1,6 @@
 import zxcvbn as zac
 import hashlib
 import re
-import os
 import streamlit as st
 from pwnedpasswords import pwnedpasswords as pwned
 from ollama import chat
@@ -233,8 +232,8 @@ st.markdown(f"""
 
 /* Image Icon */
 #ai-icon {{
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     background-image: url('https://raw.githubusercontent.com/haroontrailblazer/haroontrailblazer/main/1000146690-removebg-preview.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -258,7 +257,7 @@ st.markdown(f"""
     color: #00ffaa;
     padding: 10px 18px;
     border-radius: 12px;
-    font-size: 8px;
+    font-size: 12px;
     opacity: 0;
     transform: translateX(-10px);
     transition: all 0.4s ease;
