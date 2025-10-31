@@ -5,11 +5,9 @@ import re
 import streamlit as st
 from pwnedpasswords import pwnedpasswords as pwned
 from ollama import Client
-from dotenv import load_dotenv
 import os
 
 # API configuration for StrengthX-Dildo:V1
-load_dotenv()
 OLLAMA_API_URL = os.getenv("OLLAMA_API_URL")
 client = Client(host=OLLAMA_API_URL)
 
