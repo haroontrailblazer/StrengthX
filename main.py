@@ -235,7 +235,7 @@ st.markdown("""
 
 # --- Dildo Initialize state ---
 if "ai_text" not in st.session_state:
-    st.session_state.ai_text = "Hi i am Dildo<br>Summon me to generate a password!⚡"
+    st.session_state.ai_text = "Hi i am DILDO<br>Summon me to generate a password!⚡"
 
 # --- Floating Icon + Hover Bubble ---
 st.markdown(f"""
