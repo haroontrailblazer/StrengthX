@@ -8,9 +8,8 @@ from ollama import Client
 import os
 
 # API configuration for StrengthX-Dildo:V1
-HEADERS = {"Authorization": f"Bearer {os.getenv('NGROK_AUTH_TOKEN')}"}
 OLLAMA_API_URL = os.getenv("OLLAMA_API_URL")
-client = Client(host=OLLAMA_API_URL, headers=HEADERS)
+client = Client(host=OLLAMA_API_URL)
 
 
 
