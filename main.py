@@ -347,5 +347,5 @@ if trigger:
         'role': 'user',
         'content': 'Generate a strong password and display only the password, no explanations, no extra text, and nothing else under any circumstances, Dont regenerate any password everytime generate a unique one and always generate minimum length of 16.'
     }])
-    st.write(response.message.content)
+    st.write(response['message']['content'])
     st.rerun()
