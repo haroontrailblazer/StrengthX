@@ -241,15 +241,15 @@ st.markdown(f"""
 /* Floating Icon Container */
 #float-icon {{
     position: fixed;
-    bottom: 30px;
-    left: 10px;
+    bottom: 35px;
+    left: 15px;
     z-index: 999;
 }}
 
 /* Image Icon */
 #ai-icon {{
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     background-image: url('https://raw.githubusercontent.com/haroontrailblazer/haroontrailblazer/main/1000146690-removebg-preview.png');
     background-size: contain;
     background-repeat: no-repeat;
