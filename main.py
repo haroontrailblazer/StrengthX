@@ -242,7 +242,7 @@ st.markdown(f"""
 #float-icon {{
     position: fixed;
     bottom: 35px;
-    left: 8px;
+    left: 6px;
     z-index: 999;
 }}
 
