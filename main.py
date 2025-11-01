@@ -85,7 +85,7 @@ st.markdown("<br> </br>", unsafe_allow_html=True)
 # Prompting user for password input
 pwd = st.text_input("🔍Know how secure is your password: ", type="password", placeholder="Enter Your Password")
 if not pwd:
-    st.info("Your passwords are never stored or transmitted in plain text. All evaluations are handled securely at every stage.")
+    st.info("NOTICE: Your passwords are never stored or transmitted in plain text. All evaluations are handled securely at every stage.")
     st.stop()
     
 # Hashing the password using SHA-1 for pwnedpasswords check
@@ -117,7 +117,7 @@ Measures = [eval['guesses'],
 if Measures[9]>0:
     st.error(f"⚠️ This password has appeared **{Measures[9]:,} times** in data breaches! Choose a more unique password.")
 else:
-    st.success( "✅ Great! This password was not found in any known data breaches.")
+    st.success( "✅ Great! This password was not found in any data breaches.")
 
 
     
@@ -233,7 +233,7 @@ st.markdown("""
 
 # --- Dildo Initialize state ---
 if "ai_text" not in st.session_state:
-    st.session_state.ai_text = "Hi i am DILDO<br>Summon me to generate a password!⚡"
+    st.session_state.ai_text = "Hi i am StrengthX-Dildo<br>Summon me to generate a password!⚡"
 
 # --- Floating Icon + Hover Bubble ---
 st.markdown(f"""
@@ -242,7 +242,7 @@ st.markdown(f"""
 #float-icon {{
     position: fixed;
     bottom: 35px;
-    left: 15px;
+    left: 20px;
     z-index: 999;
 }}
 
@@ -267,7 +267,7 @@ st.markdown(f"""
 /* Text bubble */
 #ai-text {{
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     left: 70px;
     background: rgba(20, 20, 20, 0.95);
     color: #00ffaa;
