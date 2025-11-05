@@ -251,7 +251,7 @@ st.markdown(f"""
 #ai-icon {{
     width: 90px;
     height: 90px;
-    background-image: url('https://github.com/haroontrailblazer/haroontrailblazer/blob/main/Project%20Pngs/AI-Logo.png');
+    background-image: url('https://github.com/haroontrailblazer/haroontrailblazer/blob/main/Project%20Pngs/AI-Logo.png?raw=true');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
