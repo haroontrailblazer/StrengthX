@@ -115,7 +115,7 @@ Measures = [eval['guesses'],
 
 # --- Display Breach Results ---
 if Measures[9]>0:
-    st.error(f"⚠️ This password has appeared **{Measures[9]:,} times** in data breaches! Choose a more unique password.")
+    st.error(f"⚠️ This password has appeared **'{Measures[9]:,}' times** in data breaches! Choose a more unique password.")
 else:
     st.success( "✅ Great! This password was not found in any data breaches.")
 
@@ -142,7 +142,7 @@ st.markdown("<br> </br>", unsafe_allow_html=True)
 
    
 # --- Insights ---
-st.markdown('<span style="color:#33ff99; font-size:1.5em;">Detailed Analysis </span>', unsafe_allow_html=True)
+st.markdown('<span style="color:#33ff99; font-size:1.7em;">Security Intelligence </span>', unsafe_allow_html=True)
 st.write(f"<span style='color:#5595d4'>***Crack Time :***</span>    {eval['crack_times_display']['offline_fast_hashing_1e10_per_second']}",unsafe_allow_html = True)
 st.write(f"<span style='color:#5595d4'>***Feedback :***</span>    {Measures[8]['warning'] if Measures[8]['warning'] else 'No warnings'}",unsafe_allow_html = True)
 
@@ -172,7 +172,7 @@ if not re.search(pattern2, pwd):
     regexeval.append('Add Uppercase letters to your password')
 
 # 4 checking for special characters
-pattern3 = r'[!@#$%^&*()_+{}\[\]:;"\'<>?,./`~\\|\-]'
+pattern3 = r'[!@#$%^&*()_+{}\[\]:;"\'<br>?,./`~\\|\-]'
 if not re.search(pattern3, pwd):
     regexeval.append('Add Special Characters to your password')
     
@@ -195,10 +195,11 @@ trigger = st.button(F"⚡summon Dildo", key="hidden_trigger")
 st.markdown("</div>", unsafe_allow_html=True)   
 st.markdown("<br> </br>", unsafe_allow_html=True)
 
-
+st.markdown("<br> </br>",unsafe_allow_html=True)
+st.divider()
 
 # --- Info Section ---
-st.markdown("### <span style='color:#FF0000'>⚠️ Attention!!</span> ###", unsafe_allow_html = True)
+st.markdown("### <span style='color:#ffcc00'>⚠️ Attention!!</span> ###", unsafe_allow_html = True)
 st.markdown("""
 **Using weak passwords:**  
 Weak passwords like `123456` or `qwerty` are easy to guess and vulnerable to brute-force attacks.  
@@ -209,7 +210,6 @@ Your passwords are never stored, never shared, and never transmitted in plain te
 All evaluations happen securely on your own device.
 """,unsafe_allow_html = True)
 
-st.divider()
 
 # --- Footer ---
 st.markdown("""
@@ -225,7 +225,7 @@ st.markdown("""
     <hr style="border:none;border-top:1px solid #e6e6e6;margin:12px 0;">
     <p style="margin:8px 0 0;color:#555;font-size:13px;line-height:1.4;text-align:left;">
         <strong>About:</strong><br>
-        StrengthX is a free, open-source password strength checker designed to help you create stronger passwords and enhance your online security.
+        StrengthX is a free, open-source password strength checker designed to help you create stronger passwords and enhance your online security Integrated with AI-Password Generator "StrengthX-Dildo:V1".
     </p>
 </div>
 <br>
