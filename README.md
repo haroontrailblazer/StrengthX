@@ -22,7 +22,8 @@
 - **Backend Developers**: Haroon K M, Balamurugan T
 - **Frontend Developer**: Sujay S
 - **Documentation**: Enbachozhan V
-
+- **Security Engineer**: Harikrishnan V
+  
 ---
 
 ## Technology Stack
