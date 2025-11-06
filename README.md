@@ -2,7 +2,7 @@
 
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg) 
 ![Python Version](https://img.shields.io/badge/Python-3.11+-blue.svg) 
-![Contributors](https://img.shields.io/badge/Contributors-4-orange.svg) 
+![Contributors](https://img.shields.io/badge/Contributors-5-orange.svg) 
 
 **StrengthX** is a web application that helps users evaluate the strength of their passwords and check if their passwords have been involved in known data breaches. It provides a quick and secure way to improve password security and promote safe online practices.  
 
