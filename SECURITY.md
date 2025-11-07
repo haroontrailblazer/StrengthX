@@ -41,6 +41,7 @@ We’ll acknowledge your report within **48 hours** and aim to provide a fix or 
 
 StrengthX follows key security and privacy principles:
 
+- **secure attacks:** prevent from DDOS attacks and man in the middle attacks,
 - **No Data Storage:** User passwords or hashes are never logged, stored, or transmitted to external servers.  
 - **Hashed API Queries:** All password breach checks use **SHA-1 hashing** before transmission to maintain user privacy.  
 - **Zero Retention:** No personally identifiable information (PII) is stored on the server.  
@@ -61,10 +62,12 @@ StrengthX follows key security and privacy principles:
 ## 🧩 Recommended Security Tools
 
 Developers contributing to StrengthX are encouraged to use:
-- `bandit` — for static security analysis in Python  
-- `pip-audit` — to check for vulnerable dependencies  
-- `pre-commit` hooks — to ensure no secrets or keys are committed
-
+- `bandit` — for static security analysis in Python. 
+- `pip-audit` — to check for vulnerable dependencies.  
+- `pre-commit` hooks — to ensure no secrets or keys are committed.
+- `nmap` - it ensure for network scan in network security.
+- `kali-linux`- it accessed for security management/ tools.
+  
 ---
 
 ## 📜 Legal
