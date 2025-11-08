@@ -1,6 +1,6 @@
-
-<div align="center">
 # StrengthX
+<div align="center">
+
 
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg) 
 ![Python Version](https://img.shields.io/badge/Python-3.11+-blue.svg) 
