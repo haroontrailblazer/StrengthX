@@ -1,11 +1,11 @@
-# 🔐 Security Policy
+# Security Policy
 
 Thank you for taking the time to help make **StrengthX** more secure.  
 We take security and privacy very seriously, especially since our project deals with password analysis and user data protection.
 
 ---
 
-## 🛡️ Supported Versions
+## Supported Versions
 
 We currently provide security updates for the latest **main** branch.
 
@@ -16,7 +16,7 @@ We currently provide security updates for the latest **main** branch.
 
 ---
 
-## 🚨 Reporting a Vulnerability
+## Reporting a Vulnerability
 
 If you discover a **vulnerability**, **security issue**, or **data privacy risk** in StrengthX:
 
@@ -37,7 +37,7 @@ We’ll acknowledge your report within **48 hours** and aim to provide a fix or 
 
 ---
 
-## 🔒 Security Principles Followed
+## Security Principles Followed
 
 StrengthX follows key security and privacy principles:
 
@@ -50,7 +50,7 @@ StrengthX follows key security and privacy principles:
 
 ---
 
-## 🧠 Responsible Disclosure Guidelines
+## Responsible Disclosure Guidelines
 
 - Act in **good faith** and avoid publicly disclosing vulnerabilities before they are fixed.  
 - Do not exploit, damage, or access user data during your testing.  
@@ -59,7 +59,7 @@ StrengthX follows key security and privacy principles:
 
 ---
 
-## 🧩 Recommended Security Tools
+## Recommended Security Tools
 
 Developers contributing to StrengthX are encouraged to use:
 - `bandit` — for static security analysis in Python. 
@@ -70,7 +70,7 @@ Developers contributing to StrengthX are encouraged to use:
   
 ---
 
-## 📜 Legal
+## Legal
 
 By submitting a security report, you agree to allow the StrengthX maintainers to use your report for improving project security without restriction.  
 This project is covered under the **Apache License 2.0**.
