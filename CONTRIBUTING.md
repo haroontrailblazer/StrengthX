@@ -5,7 +5,7 @@ We’re thrilled to have you here. This document outlines how you can help impro
 
 ---
 
-## 🧭 About StrengthX
+## About StrengthX
 
 **StrengthX** is a web application built using **Streamlit** and **Python** that helps users:
 - Check password **strength** in real-time.
@@ -14,7 +14,7 @@ We’re thrilled to have you here. This document outlines how you can help impro
 
 ---
 
-## 🧩 How to Contribute
+## How to Contribute
 
 There are many ways you can contribute:
 
