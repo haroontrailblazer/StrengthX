@@ -343,6 +343,7 @@ window.addEventListener('message', (event) => {
 # AI complex password generator (haroontrailblazer/SrengthX-Dildo:V1)
 # AI refrence link: https://ollama.com/haroontrailblazer/StrengthX-Dildo
 # --- Generate password when triggered ---
+
 if trigger:
     response = client.chat(model='haroontrailblazer/StrengthX-Dildo:V1', messages=[{
         'role': 'user',
