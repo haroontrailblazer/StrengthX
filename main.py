@@ -12,16 +12,29 @@ OLLAMA_API_URL = os.getenv("OLLAMA_API_URL")
 client = Client(host=OLLAMA_API_URL)
 
 
-
 # --- Page Configuration ---
-st.set_page_config(page_title="StrengthX - Strengthen Your Password",page_icon="https://github.com/haroontrailblazer/haroontrailblazer/blob/main/Project%20Pngs/image.png?raw=true",layout="centered")
+st.set_page_config(
+    page_title="StrengthX - Strengthen Your Password",
+    page_icon="https://github.com/haroontrailblazer/haroontrailblazer/blob/main/Project%20Pngs/image.png?raw=true",
+    layout="centered"
+)
+
+# --- Hide Streamlit Default UI Elements ---
 st.markdown("""
     <style>
         #MainMenu {visibility: hidden;}
+
         footer {visibility: hidden;}
+
+        [data-testid="stRunningIcon"] {
+            display: none !important;
+        }
+
+        header[data-testid="stHeader"] {
+            display: none !important;
+        }
     </style>
 """, unsafe_allow_html=True)
-
 
 
 # --- SEO META TAGS ---

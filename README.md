@@ -27,10 +27,10 @@ Cloud Backup · Cloud Computing · Cloud Security · Compliance Lifecycle · Cyb
 
 ## Features
 
-- 🔍 **Password Strength Check**: Evaluates the complexity of the entered password.  
-- ⚠️ **Breach Verification**: Checks how many times a password has been exposed in known data breaches.  
-- 🔒 **Privacy-Focused**: Passwords are never stored in the backend; all checks are done securely.  
-- 💻 **Interactive UI**: User-friendly interface for seamless password testing.  
+- **Password Strength Check**: Evaluates the complexity of the entered password.  
+- **Breach Verification**: Checks how many times a password has been exposed in known data breaches.  
+- **Privacy-Focused**: Passwords are never stored in the backend; all checks are done securely.  
+- **Interactive UI**: User-friendly interface for seamless password testing.  
 
 ---
 
