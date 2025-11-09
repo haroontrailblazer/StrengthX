@@ -20,23 +20,6 @@ st.set_page_config(
     
 )
 
-# --- Hide Streamlit Default UI Elements ---
-st.markdown("""
-    <style>
-        #MainMenu {visibility: hidden;}
-
-        footer {visibility: hidden;}
-
-        [data-testid="stRunningIcon"] {
-            display: none !important;
-        }
-
-        header[data-testid="stHeader"] {
-            display: none !important;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
 
 # --- SEO META TAGS ---
 st.markdown("""
