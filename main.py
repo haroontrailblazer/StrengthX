@@ -14,7 +14,7 @@ client = Client(host=OLLAMA_API_URL)
 
 
 # --- Page Configuration ---
-st.set_page_config(page_title="StrengthX - Strengthen Your Password",page_icon="https://github.com/haroontrailblazer/haroontrailblazer/blob/main/Project%20Pngs/image.png?raw=true",layout="centered")
+st.set_page_config(page_title="StrengthX - Strengthen Your Password",page_icon="https://github.com/haroontrailblazer/haroontrailblazer/blob/main/Project%20Pngs/image.jpg?raw=true",layout="centered")
 st.markdown("""
     <style>
         #MainMenu {visibility: hidden;}
