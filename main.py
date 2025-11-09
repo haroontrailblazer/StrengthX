@@ -17,6 +17,7 @@ st.set_page_config(
     page_title="StrengthX - Strengthen Your Password",
     page_icon="https://github.com/haroontrailblazer/haroontrailblazer/blob/main/Project%20Pngs/image.png?raw=true",
     layout="centered"
+    
 )
 
 # --- Hide Streamlit Default UI Elements ---
