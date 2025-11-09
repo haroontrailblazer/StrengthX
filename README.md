@@ -1,4 +1,3 @@
-# StrengthX
 <div align="center">
 
 
