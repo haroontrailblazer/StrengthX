@@ -75,7 +75,7 @@ st.markdown("""
 
 st.markdown("<div class='title'>StrengthX</div>", unsafe_allow_html=True)
 st.markdown("<div class='subtitle'>Strengthen your password</div>", unsafe_allow_html=True)
-st.markdown("<br> </br>", unsafe_allow_html=True)
+st.markdown("<br></br>",unsafe_allow_html=True)
 
 
 
@@ -84,25 +84,6 @@ st.markdown("<br> </br>", unsafe_allow_html=True)
 pwd = st.text_input("🔍Know how secure is your password: ", type="password", placeholder="Enter Your Password")
 if not pwd:
     st.info("NOTICE: Your passwords are never stored or transmitted in plain text. All evaluations are handled securely at every stage.")
-    # --- Footer ---
-    st.markdown("""
-    <div class="footer" style="background-color:black;color:#333;padding:18px;border-radius:12px;max-width:820px;margin:20px auto;text-align:center;font-family:Segoe UI, Tahoma, sans-serif;">
-        <p style="margin:0 0 8px;font-size:14px;">
-            <strong>Contact:</strong>
-            <a href="mailto:hexra2025@gmail.com" style="color:#1a73e8;text-decoration:none;margin-left:8px;">hexra2025@gmail.com</a>
-        </p>
-        <p style="margin:0 0 12px;font-size:14px;">
-            <a href="https://www.instagram.com/hexra_?igsh=dGFqY2MzMjQ1aGJo" target="_blank" style="color:#1a73e8;text-decoration:none;margin:0 8px;">Instagram</a> |
-            <a href="https://github.com/haroontrailblazer" target="_blank" style="color:#1a73e8;text-decoration:none;margin:0 8px;">GitHub</a>
-        </p>
-        <hr style="border:none;border-top:1px solid #e6e6e6;margin:12px 0;">
-        <p style="margin:8px 0 0;color:#555;font-size:13px;line-height:1.4;text-align:left;">
-            <strong>About:</strong><br>
-            StrengthX is a free, open-source password strength checker designed to help you create stronger passwords and enhance your online security Integrated with AI-Password Generator "StrengthX-Dildo:V1".
-        </p>
-    </div>
-    <br>
-    """, unsafe_allow_html=True)
     st.stop()
     
 # Hashing the password using SHA-1 for pwnedpasswords check
