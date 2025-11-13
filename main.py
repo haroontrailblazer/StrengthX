@@ -223,8 +223,9 @@ st.markdown("""
     <hr style="border:none;border-top:1px solid #e6e6e6;margin:12px 0;">
     <p style="margin:8px 0 0;color:#555;font-size:13px;line-height:1.4;text-align:left;">
         <strong>About:</strong><br>
-        StrengthX is a free, open-source password strength checker designed to help you create stronger passwords and enhance your online security Integrated with AI-Password Generator "StrengthX-Dildo:V1".
+        StrengthX is a free, open-source password strength checker designed to help you create stronger passwords and enhance your online security Integrated with AI-Password Generator "StrengthX-Dildo:V1".<br>
     </p>
+    <a href="https://stats.uptimerobot.com/kVpen34aKT/" target="_blank" style="color:#1a73e8;text-decoration:none;margin:0 8px; align:center">Service Status</a>
 </div>
 <br>
 """, unsafe_allow_html=True)
