@@ -46,7 +46,6 @@ st.markdown("""
             color: #33ff99;
             font-size: 2.5em;
             font-weight: bold;
-            text-shadow:0 0 8px #33ff99;
         }
         .subtitle {
             font-size: 1.1em;
