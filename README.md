@@ -1,9 +1,13 @@
+# StrengthX - Know How Strong Is Your Passwords
+<br>
 <div align="center">
 
 
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg) 
 ![Python Version](https://img.shields.io/badge/Python-3.11+-blue.svg) 
 ![Contributors](https://img.shields.io/badge/Contributors-5-orange.svg) 
+[![Status](https://img.shields.io/badge/Status-Active-success.svg)](#)
+[![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)](#)
 
 </div>
 
