@@ -9,6 +9,12 @@ import re
 import os
 
 
+
+# google verification
+if "googleee00d3585342fc79" in st.query_params:
+    st.write(Path("googleee00d3585342fc79.html"))
+    st.stop()
+    
 # sitemapping
 if "sitemap" in st.query_params:
     st.write(Path("sitemap.txt").read_text())
