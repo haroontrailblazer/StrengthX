@@ -1,15 +1,33 @@
 
+from pwnedpasswords import pwnedpasswords as pwned
+from ollama import Client
+from pathlib import Path
+import streamlit as st
 import zxcvbn as zac
 import hashlib
 import re
-import streamlit as st
-from pwnedpasswords import pwnedpasswords as pwned
-from ollama import Client
 import os
+
+
+# sitemapping
+if "sitemap" in st.query_params:
+    st.write(Path("sitemap.txt").read_text())
+    st.stop()
+
+# web crawler
+if "robots" in st.query_params:
+    st.write(Path("robots.txt").read_text)
+    st.stop()
+    
+
+
 
 # API configuration for StrengthX-Dildo:V1
 OLLAMA_API_URL = os.getenv("OLLAMA_API_URL")
 client = Client(host=OLLAMA_API_URL)
+
+
+
 
 
 # --- Page Configuration ---
@@ -22,6 +40,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
+
+
+
 # --- SEO META TAGS ---
 st.markdown("""
 <head>
@@ -31,6 +52,9 @@ st.markdown("""
   <meta name="robots" content="index, follow">
 </head>
 """, unsafe_allow_html=True)
+
+
+
 
 
 
@@ -73,13 +97,17 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+
+
+
 st.markdown("<div class='title'>StrengthX</div>", unsafe_allow_html=True)
 st.markdown("<div class='subtitle'>Strengthen your password</div>", unsafe_allow_html=True)
 st.markdown("<br></br>",unsafe_allow_html=True)
 
 
 
-# Example usage
+
+
 # Prompting user for password input
 pwd = st.text_input("🔍Know how secure is your password: ", type="password", placeholder="Enter Your Password")
 if not pwd:
@@ -111,15 +139,17 @@ Measures = [eval['guesses'],
 
 
 
-# --- Display Breach Results ---
+
+# Display Breach Results
 if Measures[9]>0:
     st.error(f"⚠️ This password has appeared **'{Measures[9]:,}' times** in data breaches! Choose a more unique password.")
 else:
     st.success( "✅ Great! This password was not found in any data breaches.")
 
 
+
     
-# --- Password Strength Score Interpretation ---
+# Password Strength Score
 if eval['score']==0:
     st.error(f"The password is very weak")
 elif eval['score']==1:
@@ -138,8 +168,9 @@ st.markdown("<br> </br>", unsafe_allow_html=True)
 
 
 
+
    
-# --- Insights ---
+# Insights
 st.markdown('<span style="color:#33ff99; font-size:1.7em;">Security Intelligence </span>', unsafe_allow_html=True)
 st.write(f"<span style='color:#5595d4'>***Crack Time :***</span>    {eval['crack_times_display']['offline_fast_hashing_1e10_per_second']}",unsafe_allow_html = True)
 st.write(f"<span style='color:#5595d4'>***Feedback :***</span>    {Measures[8]['warning'] if Measures[8]['warning'] else 'No warnings'}",unsafe_allow_html = True)
@@ -151,6 +182,8 @@ else:
     suggestion_text = str(suggestions) if suggestions else "No suggestions"
 
 st.write(f"<span style='color:#5595d4'>***Suggestion :***</span>    {suggestion_text}", unsafe_allow_html=True)
+
+
 
 
 
@@ -187,7 +220,9 @@ while True:
 
 
 
-# --- Dildo trigger as a tiny emoji icon ---
+
+
+# Dildo trigger Button
 st.markdown("<div class='small-emoji-btn'>", unsafe_allow_html=True)
 trigger = st.button(F"⚡summon Dildo", key="hidden_trigger")
 st.markdown("</div>", unsafe_allow_html=True)   
@@ -196,7 +231,10 @@ st.markdown("<br> </br>", unsafe_allow_html=True)
 st.markdown("<br> </br>",unsafe_allow_html=True)
 st.divider()
 
-# --- Info Section ---
+
+
+
+# Info Section
 st.markdown("### <span style='color:#ffcc00'>⚠️ Attention!!</span> ###", unsafe_allow_html = True)
 st.markdown("""
 **Using weak passwords:**  
@@ -207,6 +245,9 @@ Avoid simplicity – it increases the risk of unauthorized access.
 Your passwords are never stored, never shared, and never transmitted in plain text.
 All evaluations happen securely on your own device.
 """,unsafe_allow_html = True)
+
+
+
 
 
 # --- Footer ---
@@ -231,11 +272,17 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# --- Dildo Initialize state ---
+
+
+
+# Dildo Initialize state
 if "ai_text" not in st.session_state:
     st.session_state.ai_text = "Hi i am StrengthX-Dildo<br>Summon me to generate a password!⚡"
 
-# --- Floating Icon + Hover Bubble ---
+
+
+
+# Floating Icon + Hover Bubble
 st.markdown(f"""
 <style>
 /* Floating Icon Container */
@@ -308,7 +355,9 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 
-# --- JavaScript listener (inside Streamlit iframe) ---
+
+
+# JavaScript listener (inside Streamlit iframe)
 st.markdown("""
 <script>
 window.addEventListener('message', (event) => {
@@ -320,7 +369,8 @@ window.addEventListener('message', (event) => {
 """, unsafe_allow_html=True)
 
 
-# --- Inject script to auto-trigger Streamlit button when JS fires ---
+
+# Inject script to auto-trigger Streamlit button when JS fires
 st.markdown("""
 <script>
 const iframe = window.frameElement;
@@ -339,10 +389,11 @@ window.addEventListener('message', (event) => {
 """, unsafe_allow_html=True)
 
 
+
+
+
 # AI complex password generator (haroontrailblazer/SrengthX-Dildo:V1)
 # AI refrence link: https://ollama.com/haroontrailblazer/StrengthX-Dildo
-# --- Generate password when triggered ---
-
 if trigger:
     response = client.chat(model='haroontrailblazer/StrengthX-Dildo:V1', messages=[{
         'role': 'user',
