@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://strengthx.onrender.com/sitemap.xml
