@@ -30,17 +30,17 @@ jobs:
 
       - name: Load environment variables from .env
         run: |
-          echo "📦 Loading environment variables from .env file..."
+          echo "Loading environment variables from .env file..."
           if [ -f .env ]; then
             export $(cat .env | grep -v '^#' | xargs)
           else
-            echo "⚠️ No .env file found, skipping."
+            echo " No .env file found, skipping."
           fi
         shell: bash
 
       - name: Lint with flake8
         run: |
-          echo "🧹 Linting with flake8..."
+          echo "Linting with flake8..."
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
@@ -48,5 +48,5 @@ jobs:
         env:
           OLLAMA_API_URL: ${{ env.OLLAMA_API_URL }}
         run: |
-          echo "🔍 Running tests with pytest..."
-          pytest || echo "⚠️ No tests found or tests failed, skipping gracefully."
+          echo " Running tests with pytest..."
+          pytest || echo "No tests found or tests failed, skipping gracefully."
