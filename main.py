@@ -1,7 +1,6 @@
 
 from pwnedpasswords import pwnedpasswords as pwned
 from ollama import Client
-from pathlib import Path
 import streamlit as st
 import zxcvbn as zac
 import hashlib
