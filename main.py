@@ -10,28 +10,10 @@ import os
 
 
 
-# google verification
-if "googleee00d3585342fc79" in st.query_params:
-    st.write(Path("googleee00d3585342fc79.html"))
-    st.stop()
-    
-# sitemapping
-if "sitemap" in st.query_params:
-    st.write(Path("sitemap.txt").read_text())
-    st.stop()
-
-# web crawler
-if "robots" in st.query_params:
-    st.write(Path("robots.txt").read_text)
-    st.stop()
-    
-
-
 
 # API configuration for StrengthX-Dildo:V1
 OLLAMA_API_URL = os.getenv("OLLAMA_API_URL")
 client = Client(host=OLLAMA_API_URL)
-
 
 
 
@@ -106,6 +88,8 @@ st.markdown("""
 
 
 
+
+
 st.markdown("<div class='title'>StrengthX</div>", unsafe_allow_html=True)
 st.markdown("<div class='subtitle'>Strengthen your password</div>", unsafe_allow_html=True)
 st.markdown("<br></br>",unsafe_allow_html=True)
@@ -130,6 +114,8 @@ cout= pwned.check(pwdh)
     
     
     
+    
+    
 # collecting all the measures Available
 regexeval=[]
 Measures = [eval['guesses'],
@@ -142,6 +128,8 @@ Measures = [eval['guesses'],
             eval['sequence'],
             eval['feedback'],
             cout,]
+
+
 
 
 
