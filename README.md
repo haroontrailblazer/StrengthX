@@ -1,7 +1,3 @@
-# StrengthX - Know How Strong Is Your Passwords
-**StrengthX** is a web application that helps users evaluate the strength of their passwords and check if their passwords have been involved in known data breaches. It provides a quick and secure way to improve password security and promote safe online practices.  
-
-<br>
 <div align="center">
 
 
@@ -12,6 +8,11 @@
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)](#)
 
 </div>
+
+# StrengthX - Know How Strong Is Your Passwords
+**StrengthX** is a web application that helps users evaluate the strength of their passwords and check if their passwords have been involved in known data breaches. It provides a quick and secure way to improve password security and promote safe online practices.  
+
+<br>
 
 
 <div align="center">
