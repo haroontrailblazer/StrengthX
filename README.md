@@ -53,34 +53,7 @@ Cloud Backup · Cloud Computing · Cloud Security · Compliance Lifecycle · Cyb
 - **Backend**: Python  
 - **Frontend**: Streamlit
 - **AI-Model**: ollama  
-- **Libraries/Tools**: `zxcvbn`, `hashlib`, `pwnedpasswords`, `ollama` API  
-
----
-
-## Installation
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/haroontrailblazer/StrengthX.git
-    ```
-2. Navigate to the project folder:
-    ```bash
-    cd StrengthX
-    ```
-3. Create and activate a virtual environment (optional but recommended):
-    ```bash
-    python -m venv venv
-    source venv/bin/activate   # Linux/macOS
-    venv\Scripts\activate      # Windows
-    ```
-4. Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-5. Run the application:
-    ```bash
-    streamlit run app.py
-    ```
+- **Libraries/Tools**: `zxcvbn`, `hashlib`, `pwnedpasswords`, `ollama` API 
 
 ---
 
