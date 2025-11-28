@@ -63,7 +63,23 @@ Cloud Backup · Cloud Computing · Cloud Security · Compliance Lifecycle · Cyb
 2. View the password strength score and suggestions to improve it.  
 3. Check if the password has been exposed in data breaches.  
 4. Adjust your password accordingly for better security.
-5. summon SterngthX-Dildo AI to generate a strong password. 
+5. summon SterngthX-Dildo AI to generate a strong password.
+
+## Performance Comparison
+<img width="250" height="250" alt="img" src="https://github.com/user-attachments/assets/2451ccfd-2c38-4a87-89e0-78244503910b" /> <br>
+
+| **Legend** | 🟩 | 🟨 | 🟧 | ⬜ |
+|-----------|-----|-----|-----|-----|
+| **Score** | 5   | 4   | 3   | 0   |
+
+
+| **Feature**                      | **StrengthX** | **LastPass** | **1Password** | **NordPass** |
+|---------------------------------|----------------|--------------|----------------|--------------|
+| **AI Password Generation**      | 🟩  | ⬜  | ⬜  | ⬜  |
+| **Uses zxcvbn**                 | 🟩  | 🟨  | 🟨  | 🟨  |
+| **Uses live breach database**   | 🟩  | ⬜  | ⬜  | 🟧  |
+| **Regex-based policy enforcement** | 🟩  | 🟧  | 🟧  | 🟧  |
+| **Local-only evaluation**       | 🟩  | ⬜  | ⬜  | ⬜  | 
 
 ---
 
