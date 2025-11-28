@@ -110,8 +110,10 @@ if not pwd:
     st.info("NOTICE: Your passwords are never stored or transmitted in plain text. All evaluations are handled securely at every stage.")
     st.stop()
     
+    
 # Hashing the password using SHA-1 for pwnedpasswords check
 pwdh = hashlib.sha1(pwd.encode("utf-8")).hexdigest().upper()
+    
     
 # Calling the evaluation function
 eval= zac.zxcvbn(pwd)
@@ -193,19 +195,23 @@ pattern1 = r'(?=.*\d)'
 if not re.search(pattern1, pwd):
     regexeval.append('Add Numbers to your password')
 
+
 # 2 checking for length
 if len(pwd) < 12:
     regexeval.append('Increase Length of your Password to at least 12 characters.')
+
 
 # 3 checking for uppercase letters
 pattern2 = r'(?=.*[A-Z])'
 if not re.search(pattern2, pwd):
     regexeval.append('Add Uppercase letters to your password')
 
+
 # 4 checking for special characters
 pattern3 = r'[!@#$%^&*()_+{}\[\]:;"\'<br>?,./`~\\|\-]'
 if not re.search(pattern3, pwd):
     regexeval.append('Add Special Characters to your password')
+    
     
     
     
@@ -392,9 +398,12 @@ window.addEventListener('message', (event) => {
 
 
 
-# AI complex password generator (haroontrailblazer/SrengthX-Dildo:V1)
-# AI refrence link: https://ollama.com/haroontrailblazer/StrengthX-Dildo
+
+# Trigger for AI Password Generation
 if trigger:
+    
+    # AI complex password generator (haroontrailblazer/SrengthX-Dildo:V1)
+    # AI refrence link: https://ollama.com/haroontrailblazer/StrengthX-Dildo
     try:
         response = client.chat(model='haroontrailblazer/StrengthX-Dildo:V1', messages=[{
             'role': 'user',
@@ -404,15 +413,18 @@ if trigger:
         st.session_state.generated_password = response['message']['content']
         st.session_state.ai_text = response['message']['content']
         st.rerun()
+        
+        
+    # Fallback to Google GenAI if Ollama fails   
     except:
-
-        # Fallback to Google GenAI if Ollama fails
         response= google_client.models.generate_content(
         model="gemini-2.0-flash",
         contents="Generate a strong password and display only the password, no explanations, no extra text, and nothing else under any circumstances, Dont regenerate any password everytime generate a unique one and always generate minimum length of 16.",
         max_output_tokens=100,
         temperature=0.2,
         )
+        # Store the password in session state
         st.session_state.generated_password = response.text
         st.session_state.ai_text = response.text
         st.rerun()
+        
