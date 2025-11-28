@@ -1,6 +1,7 @@
 
 from pwnedpasswords import pwnedpasswords as pwned
 from ollama import Client
+from google import genai
 import streamlit as st
 import zxcvbn as zac
 import hashlib
@@ -11,9 +12,15 @@ import os
 
 
 # API configuration for StrengthX-Dildo:V1
-OLLAMA_API_URL = os.getenv("OLLAMA_API_URL")
-client = Client(host=OLLAMA_API_URL)
-
+try:
+    OLLAMA_API_URL = os.getenv("OLLAMA_API_URL")
+    client = Client(host=OLLAMA_API_URL)
+    
+    
+# Google API configuration if Ollama fails
+except:
+    GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+    google_client = genai.Client(api_key=GOOGLE_API_KEY)
 
 
 
@@ -388,11 +395,24 @@ window.addEventListener('message', (event) => {
 # AI complex password generator (haroontrailblazer/SrengthX-Dildo:V1)
 # AI refrence link: https://ollama.com/haroontrailblazer/StrengthX-Dildo
 if trigger:
-    response = client.chat(model='haroontrailblazer/StrengthX-Dildo:V1', messages=[{
-        'role': 'user',
-        'content': 'Generate a strong password and display only the password, no explanations, no extra text, and nothing else under any circumstances, Dont regenerate any password everytime generate a unique one and always generate minimum length of 16.'
-    }])
-    # Store the password in session state
-    st.session_state.generated_password = response['message']['content']
-    st.session_state.ai_text = response['message']['content']
-    st.rerun()
+    try:
+        response = client.chat(model='haroontrailblazer/StrengthX-Dildo:V1', messages=[{
+            'role': 'user',
+            'content': 'Generate a strong password and display only the password, no explanations, no extra text, and nothing else under any circumstances, Dont regenerate any password everytime generate a unique one and always generate minimum length of 16.'
+        }])
+        # Store the password in session state
+        st.session_state.generated_password = response['message']['content']
+        st.session_state.ai_text = response['message']['content']
+        st.rerun()
+    except:
+
+        # Fallback to Google GenAI if Ollama fails
+        response= google_client.models.generate_content(
+        model="gemini-2.0-flash",
+        contents="Generate a strong password and display only the password, no explanations, no extra text, and nothing else under any circumstances, Dont regenerate any password everytime generate a unique one and always generate minimum length of 16.",
+        max_output_tokens=100,
+        temperature=0.2,
+        )
+        st.session_state.generated_password = response.text
+        st.session_state.ai_text = response.text
+        st.rerun()

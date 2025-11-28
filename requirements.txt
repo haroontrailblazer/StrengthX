@@ -2,3 +2,4 @@ zxcvbn-python
 streamlit
 pwnedpasswords
 ollama
+google-genai
