@@ -417,9 +417,7 @@ if trigger:
     except:
         response= google_client.models.generate_content(
         model="gemini-2.0-flash",
-        contents="Generate a strong password and display only the password, no explanations, no extra text, and nothing else under any circumstances, Dont regenerate any password everytime generate a unique one and always generate minimum length of 16.",
-        max_output_tokens=100,
-        temperature=0.2,
+        contents="Generate a strong password and display only the password, no explanations, no extra text, and nothing else under any circumstances, Dont regenerate any password everytime generate a unique one and always generate minimum length of 16."
         )
         # Store the password in session state
         st.session_state.generated_password = response.text
