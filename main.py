@@ -12,15 +12,13 @@ import os
 
 
 # API configuration for StrengthX-Dildo:V1
-try:
-    OLLAMA_API_URL = os.getenv("OLLAMA_API_URL")
-    client = Client(host=OLLAMA_API_URL)
+OLLAMA_API_URL = os.getenv("OLLAMA_API_URL")
+client = Client(host=OLLAMA_API_URL)
     
     
 # Google API configuration if Ollama fails
-except:
-    GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-    google_client = genai.Client(api_key=GOOGLE_API_KEY)
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+google_client = genai.Client(api_key=GOOGLE_API_KEY)
 
 
 
