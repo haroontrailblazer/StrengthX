@@ -123,7 +123,6 @@ cout= pwned.check(pwdh)
     
     
 # collecting all the measures Available
-regexeval=[]
 Measures = [eval['guesses'],
             eval['guesses_log10'],
             eval['score'],
@@ -188,6 +187,7 @@ st.write(f"<span style='color:#5595d4'>***Suggestion :***</span>    {suggestion_
 
 
 # --- Regex Evaluations ---
+regexeval=[]
 # 1 checking for numbers
 pattern1 = r'(?=.*\d)'
 if not re.search(pattern1, pwd):
@@ -414,7 +414,7 @@ if trigger:
         
         
     # Fallback to Google GenAI if Ollama fails   
-    except:
+    except Exception as ollama_error:
         response= google_client.models.generate_content(
         model="gemini-2.0-flash",
         contents="Generate a strong password and display only the password, no explanations, no extra text, and nothing else under any circumstances, Dont regenerate any password everytime generate a unique one and always generate minimum length of 16."
@@ -424,3 +424,6 @@ if trigger:
         st.session_state.ai_text = response.text
         st.rerun()
         
+    except:
+        st.session_state.ai_text = "❌Failed to generate password."
+        st.rerun()
