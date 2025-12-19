@@ -1,7 +1,6 @@
 
 from pwnedpasswords import pwnedpasswords as pwned
 from ollama import Client
-from google import genai
 import streamlit as st
 import zxcvbn as zac
 import hashlib
@@ -14,11 +13,6 @@ import os
 # API configuration for StrengthX-Dildo:V1
 OLLAMA_API_URL = os.getenv("OLLAMA_API_URL")
 client = Client(host=OLLAMA_API_URL)
-    
-    
-# Google API configuration if Ollama fails
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-google_client = genai.Client(api_key=GOOGLE_API_KEY)
 
 
 
@@ -412,17 +406,6 @@ if trigger:
         st.session_state.ai_text = response['message']['content']
         st.rerun()
         
-        
-    # Fallback to Google GenAI if Ollama fails   
-    except Exception as ollama_error:
-        response= google_client.models.generate_content(
-        model="gemini-2.0-flash",
-        contents="Generate a strong password and display only the password, no explanations, no extra text, and nothing else under any circumstances, Dont regenerate any password everytime generate a unique one and always generate minimum length of 16."
-        )
-        # Store the password in session state
-        st.session_state.generated_password = response.text
-        st.session_state.ai_text = response.text
-        st.rerun()
         
     except:
         st.session_state.ai_text = "❌Failed to generate password."
