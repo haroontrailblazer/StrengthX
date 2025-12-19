@@ -396,17 +396,11 @@ if trigger:
     
     # AI complex password generator (haroontrailblazer/SrengthX-Dildo:V1)
     # AI refrence link: https://ollama.com/haroontrailblazer/StrengthX-Dildo
-    try:
-        response = client.chat(model='haroontrailblazer/StrengthX-Dildo:V1', messages=[{
-            'role': 'user',
-            'content': 'Generate a strong password and display only the password, no explanations, no extra text, and nothing else under any circumstances, Dont regenerate any password everytime generate a unique one and always generate minimum length of 16.'
-        }])
-        # Store the password in session state
-        st.session_state.generated_password = response['message']['content']
-        st.session_state.ai_text = response['message']['content']
-        st.rerun()
-        
-        
-    except:
-        st.session_state.ai_text = "❌Failed to generate password."
-        st.rerun()
+    response = client.chat(model='haroontrailblazer/StrengthX-Dildo:V1', messages=[{
+        'role': 'user',
+        'content': 'Generate a strong password and display only the password, no explanations, no extra text, and nothing else under any circumstances, Dont regenerate any password everytime generate a unique one and always generate minimum length of 16.'
+    }])
+    # Store the password in session state
+    st.session_state.generated_password = response['message']['content']
+    st.session_state.ai_text = response['message']['content']
+    st.rerun()
