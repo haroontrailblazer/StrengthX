@@ -407,5 +407,4 @@ if trigger:
         st.rerun()
 
     except Exception as e:
-        st.error(f"Failed to generate password: {str(e)}")
-        st.session_state.ai_text = "Hi i am StrengthX-Dildo<br>Summon me to generate a password!⚡"
+        st.session_state.ai_text = "It's not you - its us,<br>Failed to generate password."
