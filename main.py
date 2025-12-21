@@ -404,3 +404,6 @@ if trigger:
     st.session_state.generated_password = response['message']['content']
     st.session_state.ai_text = response['message']['content']
     st.rerun()
+
+else:
+    st.session_state.ai_text = "Hi i am StrengthX-Dildo<br>Summon me to generate a password!⚡"
