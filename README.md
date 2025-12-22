@@ -1,4 +1,6 @@
 # StrengthX - Know How Strong Is Your Passwords
+<img width="512" height="279" alt="1000160838" src="https://github.com/user-attachments/assets/f5fef91c-11f8-4f31-a89d-de727aaba031" />
+
 **StrengthX** is a web application that helps users evaluate the strength of their passwords and check if their passwords have been involved in known data breaches. It provides a quick and secure way to improve password security and promote safe online practices.  
 
 <br>
