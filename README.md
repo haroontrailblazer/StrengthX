@@ -1,5 +1,6 @@
 # StrengthX - Know How Strong Is Your Passwords
-<img width="2816" height="1536" alt="1000160848" src="https://github.com/user-attachments/assets/00461f0e-fdd1-49ff-9242-199914e99969" />
+![WhatsApp Image 2025-12-22 at 10 43 10 PM](https://github.com/user-attachments/assets/cf64ce92-e541-4ce3-8e89-9aa5d905b49a)
+
 
 **StrengthX** is a web application that helps users evaluate the strength of their passwords and check if their passwords have been involved in known data breaches. It provides a quick and secure way to improve password security and promote safe online practices.  
 
@@ -68,8 +69,7 @@ Cloud Backup · Cloud Computing · Cloud Security · Compliance Lifecycle · Cyb
 5. summon SterngthX-Dildo AI to generate a strong password.
 
 ## Performance Comparison
-<img width="2752" height="1536" alt="1000160890" src="https://github.com/user-attachments/assets/88653afa-0818-48a3-96c3-ff5e9fc73467" />
- <br>
+![WhatsApp Image 2025-12-22 at 10 43 09 PM](https://github.com/user-attachments/assets/f6770611-6891-43e3-9b7a-cf6e961eaa21)
 
 | **Legend** | 🟩 | 🟨 | 🟧 | ⬜ |
 |-----------|-----|-----|-----|-----|
