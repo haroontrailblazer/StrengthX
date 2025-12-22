@@ -88,8 +88,8 @@ Cloud Backup · Cloud Computing · Cloud Security · Compliance Lifecycle · Cyb
 
 ## Security & Privacy
 
-- All passwords are processed locally in the browser or hashed before any breach verification.  
-- No user passwords or sensitive information are stored on the server.  
+- All passwords are processed locally in the browser and hashed before any breach verification.  
+- No user passwords or sensitive information are not stored on the server.  
   
 ---
 
