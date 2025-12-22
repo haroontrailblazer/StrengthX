@@ -68,7 +68,8 @@ Cloud Backup · Cloud Computing · Cloud Security · Compliance Lifecycle · Cyb
 5. summon SterngthX-Dildo AI to generate a strong password.
 
 ## Performance Comparison
-<img width="250" height="250" alt="img" src="https://github.com/user-attachments/assets/2451ccfd-2c38-4a87-89e0-78244503910b" /> <br>
+<img width="2752" height="1536" alt="1000160890" src="https://github.com/user-attachments/assets/88653afa-0818-48a3-96c3-ff5e9fc73467" />
+ <br>
 
 | **Legend** | 🟩 | 🟨 | 🟧 | ⬜ |
 |-----------|-----|-----|-----|-----|
