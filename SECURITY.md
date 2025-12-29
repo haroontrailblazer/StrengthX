@@ -1,80 +1,106 @@
-# Security Policy
 
-Thank you for taking the time to help make **StrengthX** more secure.  
-We take security and privacy very seriously, especially since our project deals with password analysis and user data protection.
+# Supported Versions
+
+This repository currently supports security updates for the **latest main branch only**.
+
+![Security](https://img.shields.io/badge/Security-OWASP%20ASVS%20L1-green)
+
+
+
+
+## Security Scope
+
+This project includes:
+- Password strength evaluation
+- Breached password checking using k-anonymity
+- Client-side password input handling
+
+This project **does NOT** include:
+- Authentication or login systems
+- Password storage
+- Session management
+- Authorization logic
+- Payment processing
+
+Security assessments are scoped accordingly.
 
 ---
 
-## Supported Versions
+## Security Standards & Compliance
 
-We currently provide security updates for the latest **main** branch.
+This project aligns with the following standards and guidelines:
 
-| Version | Supported |
-|----------|------------|
-| `main` (latest) | ✅ Supported |
-| Older versions | ⚠️ Not actively maintained |
+- OWASP Application Security Verification Standard (ASVS) v4.0.3  
+  - Certified **ASVS Level 1–Ready** (password evaluation scope)
+- OWASP Password Guidelines
+- OWASP Top 10 (Input handling & data exposure)
+
+---
+
+## Cryptographic Practices
+
+- Passwords are **never stored**
+- Passwords are **never logged**
+- Passwords are **never rendered back to the UI**
+- SHA-1 is used **only** for compatibility with the Have I Been Pwned API
+- SHA-1 is **not** used for authentication or storage
+- Entropy-based strength estimation is performed using industry-standard methods
 
 ---
 
 ## Reporting a Vulnerability
 
-If you discover a **vulnerability**, **security issue**, or **data privacy risk** in StrengthX:
+If you discover a security vulnerability, please report it **responsibly**.
 
-1. **Do not open a public issue.**  
-   Instead, please report it **privately** to the maintainers.
+### Preferred Reporting Method
+Email: haroonuint144@gmail.com
 
-2. Contact via:
-   - 📧 **Email:** [hexra2025@gmail.com](mailto:hexra2025@gmail.com)
-   - Or open a **confidential GitHub Security Advisory** (if available).
 
-3. Include in your report:
-   - A clear and concise description of the vulnerability.
-   - Steps to reproduce the issue (if applicable).
-   - The potential impact or affected areas.
-   - Any suggestions for mitigation.
+(Replace this with your actual contact email.)
 
-We’ll acknowledge your report within **48 hours** and aim to provide a fix or response within **7 working days**, depending on severity.
+### What to Include
+Please include:
+- A clear description of the vulnerability
+- Steps to reproduce
+- Potential impact
+- Screenshots or proof-of-concept (if applicable)
 
 ---
 
-## Security Principles Followed
+## Responsible Disclosure Policy
 
-StrengthX follows key security and privacy principles:
+- Please **do not** publicly disclose vulnerabilities before coordination
+- We aim to acknowledge reports within **72 hours**
+- We aim to provide a fix or mitigation plan within **14 days**
 
-- **secure attacks:** prevent from DDOS attacks and man in the middle attacks,
-- **No Data Storage:** User passwords or hashes are never logged, stored, or transmitted to external servers.  
-- **Hashed API Queries:** All password breach checks use **SHA-1 hashing** before transmission to maintain user privacy.  
-- **Zero Retention:** No personally identifiable information (PII) is stored on the server.  
-- **Secure Dependencies:** All Python dependencies are regularly scanned for vulnerabilities using `pip-audit` and GitHub Dependabot.  
-- **HTTPS Communication:** StrengthX is designed for deployment under HTTPS to ensure encrypted traffic.
+We appreciate responsible security research and will credit valid disclosures where appropriate.
 
 ---
 
-## Responsible Disclosure Guidelines
+## Out of Scope Vulnerabilities
 
-- Act in **good faith** and avoid publicly disclosing vulnerabilities before they are fixed.  
-- Do not exploit, damage, or access user data during your testing.  
-- Respect user privacy and comply with all applicable laws.  
-- We credit responsible researchers in our release notes, if they wish.
-
----
-
-## Recommended Security Tools
-
-Developers contributing to StrengthX are encouraged to use:
-- `bandit` — for static security analysis in Python. 
-- `pip-audit` — to check for vulnerable dependencies.  
-- `pre-commit` hooks — to ensure no secrets or keys are committed.
-- `nmap` - it ensure for network scan in network security.
-- `kali-linux`- it accessed for security management/ tools.
-  
----
-
-## Legal
-
-By submitting a security report, you agree to allow the StrengthX maintainers to use your report for improving project security without restriction.  
-This project is covered under the **Apache License 2.0**.
+The following are considered **out of scope**:
+- Denial of Service (DoS) attacks
+- Social engineering attacks
+- Issues requiring physical access
+- Vulnerabilities in third-party services or dependencies
+- User-generated weak passwords (expected behavior)
 
 ---
 
-> 🛡️ Security is everyone’s responsibility — thank you for helping make StrengthX safer for all users.
+## Future Security Roadmap
+
+Planned security enhancements for future versions:
+- Secure authentication (Argon2id / bcrypt)
+- Rate limiting and brute-force protection
+- Multi-factor authentication (MFA)
+- ASVS Level 2 certification
+- Automated dependency vulnerability scanning
+
+---
+
+## Acknowledgements
+
+This project follows security-by-design principles and welcomes constructive security feedback from the community.
+
+Thank you for helping keep this project secure.

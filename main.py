@@ -108,7 +108,7 @@ pwdh = hashlib.sha1(pwd.encode("utf-8")).hexdigest().upper()
     
     
 # Calling the evaluation function
-eval= zac.zxcvbn(pwd)
+evalpwd= zac.zxcvbn(pwd)
 cout= pwned.check(pwdh)
     
     
@@ -117,15 +117,15 @@ cout= pwned.check(pwdh)
     
     
 # collecting all the measures Available
-Measures = [eval['guesses'],
-            eval['guesses_log10'],
-            eval['score'],
-            eval['calc_time'],
-            eval['crack_times_display'],
-            eval['crack_times_seconds'],
-            eval['password'],
-            eval['sequence'],
-            eval['feedback'],
+Measures = [evalpwd['guesses'],
+            evalpwd['guesses_log10'],
+            evalpwd['score'],
+            evalpwd['calc_time'],
+            evalpwd['crack_times_display'],
+            evalpwd['crack_times_seconds'],
+            evalpwd['password'],
+            evalpwd['sequence'],
+            evalpwd['feedback'],
             cout,]
 
 
@@ -143,13 +143,13 @@ else:
 
     
 # Password Strength Score
-if eval['score']==0:
+if evalpwd['score']==0:
     st.error(f"The password is very weak")
-elif eval['score']==1:
+elif evalpwd['score']==1:
     st.warning(f"The password is weak")
-elif eval['score']==2:
+elif evalpwd['score']==2:
     st.info(f"The password is fair")
-elif eval['score']==3:
+elif evalpwd['score']==3:
     st.success(f"The password is strong")
 else:
     st.success(f"The password is very strong")
@@ -165,7 +165,7 @@ st.markdown("<br> </br>", unsafe_allow_html=True)
    
 # Insights
 st.markdown('<span style="color:#33ff99; font-size:1.7em;">Security Intelligence </span>', unsafe_allow_html=True)
-st.write(f"<span style='color:#5595d4'>***Crack Time :***</span>    {eval['crack_times_display']['offline_fast_hashing_1e10_per_second']}",unsafe_allow_html = True)
+st.write(f"<span style='color:#5595d4'>***Crack Time :***</span>    {evalpwd['crack_times_display']['offline_fast_hashing_1e10_per_second']}",unsafe_allow_html = True)
 st.write(f"<span style='color:#5595d4'>***Feedback :***</span>    {Measures[8]['warning'] if Measures[8]['warning'] else 'No warnings'}",unsafe_allow_html = True)
 
 suggestions = Measures[8].get('suggestions', []) if isinstance(Measures[8], dict) else Measures[8]
@@ -181,38 +181,38 @@ st.write(f"<span style='color:#5595d4'>***Suggestion :***</span>    {suggestion_
 
 
 # --- Regex Evaluations ---
-regexeval=[]
-# 1 checking for numbers
-pattern1 = r'(?=.*\d)'
-if not re.search(pattern1, pwd):
-    regexeval.append('Add Numbers to your password')
+def check_regex(value: str):
 
+    regexeval=[]
+    # 1 checking for numbers
+    pattern1 = r'(?=.*\d)'
+    if not re.search(pattern1, value):
+        regexeval.append('Add Numbers to your password')
 
-# 2 checking for length
-if len(pwd) < 12:
-    regexeval.append('Increase Length of your Password to at least 12 characters.')
+    # 2 checking for length
+    if len(value) < 12:
+        regexeval.append('Increase Length of your Password to at least 12 characters.')
 
+    # 3 checking for uppercase letters
+    pattern2 = r'(?=.*[A-Z])'
+    if not re.search(pattern2, value):
+        regexeval.append('Add Uppercase letters to your password')
 
-# 3 checking for uppercase letters
-pattern2 = r'(?=.*[A-Z])'
-if not re.search(pattern2, pwd):
-    regexeval.append('Add Uppercase letters to your password')
-
-
-# 4 checking for special characters
-pattern3 = r'[!@#$%^&*()_+{}\[\]:;"\'<br>?,./`~\\|\-]'
-if not re.search(pattern3, pwd):
-    regexeval.append('Add Special Characters to your password')
+    # 4 checking for special characters
+    pattern3 = r'[!@#$%^&*()_+{}\[\]:;"\'<br>?,./`~\\|\-]'
+    if not re.search(pattern3, value):
+        regexeval.append('Add Special Characters to your password')
     
-    
+    return regexeval
     
     
     
 # Displaying regex evaluation results
 while True:
-    if regexeval:
+    res = check_regex(pwd)
+    if res:
         st.markdown("<span style= 'color:#5595d4'>***Additional Recommendations:***</span>", unsafe_allow_html = True)
-        for recommendation in regexeval:
+        for recommendation in res:
             st.write(f"- {recommendation}")
     break
 
