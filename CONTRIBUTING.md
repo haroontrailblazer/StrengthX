@@ -43,5 +43,5 @@ Click the **Fork** button on the top-right of the repository page.
 
 ### 2. Clone Your Fork
 ```bash
-git clone https://github.com/<your-username>/StrengthX.git
+git clone https://github.com/haroontrailblazer/StrengthX.git
 cd StrengthX
