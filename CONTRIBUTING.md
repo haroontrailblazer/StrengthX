@@ -1,6 +1,6 @@
 # 🤝 Contributing to StrengthX
 
-Thank you for your interest in contributing to **StrengthX**! 💙  
+Thank you for your interest in contributing to **StrengthX**!
 We’re thrilled to have you here. This document outlines how you can help improve the project — from reporting bugs to submitting new features.
 
 ---
@@ -18,25 +18,25 @@ We’re thrilled to have you here. This document outlines how you can help impro
 
 There are many ways you can contribute:
 
-1. 🐞 **Report Bugs**  
+1.  **Report Bugs**  
    Found a bug? Open a new issue and include:
    - A clear description of the problem.
    - Steps to reproduce it.
    - Expected vs. actual behavior.
    - Screenshots (if applicable).
 
-2. 💡 **Suggest Features or Enhancements**  
+2.  **Suggest Features or Enhancements**  
    Have an idea? Start a discussion or open an issue explaining:
    - What feature you’d like to see.
    - Why it’s useful.
    - Possible ways to implement it.
 
-3. 💻 **Contribute Code**  
-   Want to improve the codebase? Awesome! Follow the steps below 👇
+3.  **Contribute Code**  
+   Want to improve the codebase? Awesome! Follow the steps below 
 
 ---
 
-## ⚙️ Development Setup
+## Development Setup
 
 ### 1. Fork the Repository
 Click the **Fork** button on the top-right of the repository page.
