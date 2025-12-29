@@ -88,6 +88,8 @@ Cloud Backup · Cloud Computing · Cloud Security · Compliance Lifecycle · Cyb
 ---
 
 ## Security & Privacy
+<img width="1408" height="768" alt="1766987176158" src="https://github.com/user-attachments/assets/d1d65191-fe0b-41db-8446-de0919f743af" />
+
 
 ### OWASP ASVS Password Policy Alignment
 Open Worldwide Application Security Project / Application Security Verification Standard.
