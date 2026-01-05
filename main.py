@@ -397,7 +397,7 @@ if trigger:
     # AI complex password generator (haroontrailblazer/SrengthX-Dildo:V1)
     # AI refrence link: https://ollama.com/haroontrailblazer/StrengthX-Dildo
     try:
-        response = client.chat(model='haroontrailblazer/StrengthX-Dildo:V1', messages=[{
+        response = client.chat(model='StrengthX-Dildo:V1', messages=[{
             'role': 'user',
             'content': 'Generate a strong password and display only the password, no explanations, no extra text, and nothing else under any circumstances, Dont regenerate any password everytime generate a unique one and always generate minimum length of 16.'
         }])
