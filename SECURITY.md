@@ -53,10 +53,8 @@ This project aligns with the following standards and guidelines:
 If you discover a security vulnerability, please report it **responsibly**.
 
 ### Preferred Reporting Method
-Email: haroonuint144@gmail.com
+Email: haroonint144@gmail.com
 
-
-(Replace this with your actual contact email.)
 
 ### What to Include
 Please include:
