@@ -585,6 +585,50 @@ with st.container(key="sx-bot"):
             st.error("Couldn't reach StrengthX AI. Please try again.")
 
 
+# ---------- Mobile optimisation (kept last so it wins the cascade) ----------
+st.markdown("""
+<style>
+@media (max-width: 640px) {
+    .block-container { padding-top:0.7rem; padding-left:0.6rem; padding-right:0.6rem; }
+    .sx-nav { padding:10px 15px; }
+    .sx-brand { font-size:1.05rem; gap:9px; }
+    .sx-brand .logo { width:31px; height:31px; }
+    .sx-nav-links { gap:14px; font-size:0.85rem; }
+    .sx-hero { padding:26px 4px 14px; }
+    .sx-headline { font-size:2.05rem; line-height:1.08; margin:0.9rem 0 0.7rem; }
+    .sx-eyebrow { font-size:0.62rem; letter-spacing:0.05em; padding:6px 12px; }
+    .sx-stat { padding:15px 8px; }
+    .sx-stat .num { font-size:1.45rem; }
+    .sx-section { padding:24px 15px; border-radius:20px; margin:14px 0; }
+    .sx-kicker { font-size:0.66rem; }
+    .sx-sec-title { font-size:1.4rem; margin-bottom:18px; }
+    .sx-step { padding:20px 17px; }
+    .st-key-sx-scanner { padding:20px 17px !important; border-radius:20px; }
+    .st-key-sx-ai { padding:20px 17px !important; }
+    .sx-scan-title { font-size:1.12rem; gap:10px; }
+    .sx-scan-title .ico { width:36px; height:36px; }
+    .sx-scan-desc { padding-left:0; margin-top:8px; font-size:0.88rem; }
+    .sx-card { padding:18px 16px; border-radius:16px; }
+    .sx-h { font-size:1.28rem; margin:26px 0 2px; }
+    .sx-meter-label { font-size:1.35rem; }
+    .sx-status { padding:15px 16px; gap:12px; }
+    .sx-status-txt strong { font-size:0.96rem; }
+    .sx-insight { flex-direction:column; gap:3px; }
+    .sx-insight .k { min-width:0; }
+    .sx-tip { padding:18px 17px; gap:13px; }
+    .sx-footer { padding:28px 20px 18px; border-radius:20px; margin-top:34px; }
+    .sx-footer-grid { gap:22px; }
+    .sx-footer-brand { max-width:none; }
+    .st-key-sx-bot { bottom:16px !important; right:16px !important; }
+    .st-key-sx-bot [data-testid="stPopoverButton"] {
+        width:60px !important; height:60px !important; min-height:60px !important;
+        background-size:26px 26px, cover !important;
+    }
+}
+</style>
+""", unsafe_allow_html=True)
+
+
 # ---------- AI generation handler ----------
 if bot_trigger:
     # AI complex password generator (haroontrailblazer/StrengthX-Dildo:V1)
